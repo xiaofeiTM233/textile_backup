@@ -155,6 +155,7 @@ public class RestoreBackupRunnable implements Runnable {
         Globals.INSTANCE.globalShutdownBackupFlag.set(true);
 
         log.info("Done!");
+        ExecutorService executorService;
         executorService.shutdown();
         System.exit(105);
     }
