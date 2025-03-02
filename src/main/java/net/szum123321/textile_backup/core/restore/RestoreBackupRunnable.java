@@ -36,6 +36,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Optional;
 import java.util.concurrent.FutureTask;
+import java.util.concurrent.ExecutorService;
 
 /**
  * This class restores a file provided by RestoreContext.
@@ -154,6 +155,7 @@ public class RestoreBackupRunnable implements Runnable {
         Globals.INSTANCE.globalShutdownBackupFlag.set(true);
 
         log.info("Done!");
-        System.exit(0);
+        executorService.shutdown();
+        System.exit(105);
     }
 }
