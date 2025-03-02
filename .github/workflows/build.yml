@@ -28,11 +28,3 @@ jobs:
         with:
           name: mod-output
           path: build/libs/*.jar
-
-      - name: Release to GitHub
-        uses: softprops/action-gh-release@v1
-        with:
-          files: build/libs/*.jar
-          tag_name: "v${{ github.run_number }}"
-          body_path: CHANGELOG.md
-          token: ${{ secrets.GITHUB_TOKEN }}
